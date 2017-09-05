@@ -1,0 +1,25 @@
+## INTRODUCTION
+> It is a clone of classic game : ** Frogger **. Four keys Left, Up, Right, Down in keyboard is the input of this game. According to these keys, players can control the moving of character in the main context.
+
+## GAME RULE
+> 1. Press Left, Up, Right, Down to realize the moving of the character. One press and one step.The character can not execeed the bound of background image.
+> 2. Initial health point in each game is 5. If the character encounter one bug, the life point will decrease by 1. If the health point goes to 0. The player will die and game over.
+> 3. There will be a score to store the how many scores the player achieved. If the player reached the water, he/she will win 10 points. If the player get the gem, he/she will get 5 points. 
+> 4. Each time the player get more than 50 scores. The star rain will be generated.
+> 5. Rock will place a cell in the game that the player can not reach.
+> 6. There will be 2 gems at most. If the player get the gem, he/she will get 5 points. Each time player get a gem, the original gem will disappear and another new gem will be generated at random place.
+> 7. There are 5 characters can be chosen from. Click anywhere in the window to change the role of character.
+
+## HOW TO RUN
+> To make sure the game will be run normally. Positions of files can not be changed if the code in html remains unchanged. And all images in the file images will make the game run as expected. If all files are in the their original filafolder. Open index.html, the game is on.
+
+## CODE ILLUSTRATION
+### There are 7 kinds of objects: Enemy, Player, Rock, Selector, Heart, Gem, Star in the programming.
+> For Enemy, array allEnemies is uesd to store each object enemy in the image. At first, they are generated in each row. But, after that, they can show up at random row. Also, there speed is different with the help of random function. Random function generates different coefficient for the speed. Render function can be used to show bugs image in the context. Update is used to update the position of each bug. There is also a bound check function to check whether bug has been run out of the bounds.
+> For player, there is a choice index to choose different characters. Each time the click of mouse will trigger the increasing or reset of this index. As a result, object player will visit different character resource in an array. Render function is also used to show the appearance of character. Update is used to change character according to the ask for the player. Functions win and win_check are used to check if the player has reached the water. Lose function is used to check whether the player has encounter bug and lose one health point. Function handleInput is used to response input from keyboard so that we can realize the moving of player.
+> For Rock, array allRocks is used to set rocks in the image. There position is set randomly using random function. The number of rock is 3 and they must in different location. 
+> For Selector, it is just a background of the change of hero.
+> For Heart, it means the health point of the player. Array allHearts have 5 hearts at the beginning and each time the player encounter a bug, there will be a less heart to be rendered in the image. 
+> For Gem, array BlueGems is used to set 2 gems in the game. And the two gems may be appear in the same place so that they look like a singel gem. Update function is used to update the state of the gem. When the player get the gem, anoter gem will appear in another cell. Even though they look different, they are actually the same object as the disappeared gem.
+> For Star, array allStars is used to set the star rain when the player get 50 points. 
+> Bound_check is used to check whether the player will be get out of the image. It disobey the rule of the game. Collision_check is used to check if the player has encounter the but and lose one health point. Rock_check is used to check if the player encounter rock and stopped in the specificed direction. Gem_check is used to check if the player get the gem and add 5 score. 
